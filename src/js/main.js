@@ -5,6 +5,7 @@ require.config({
 	paths: {
 		angular:			'../../bower_components/angular/angular',
 		angularRoute:		'../../bower_components/angular-route/angular-route',
+		angularStorage:		'../../bower_components/ngstorage/ngstorage',
 		
 		app:				'../scripts/app',
 		routes:				'../scripts/routes',

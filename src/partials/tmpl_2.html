@@ -1,25 +1,41 @@
 <div class="col-sm-12">
 
-	<fieldset>
-		<legend>{{title}}</legend>
+	<div data-ng-hide="title">
 
-		<label>Name:</label>
-		<input type="text" ng-model="item.name" /><br />
+		<button class="btn btn-success" data-ng-click="add()">New item</button>
+		<hr />
 
-		<label>Type:</label>
-		<select data-ng-model="item.type">
-			<option data-ng-repeat="val in [1,2,3,4,5,6,7,8]" data-ng-value="'Type '+val">Type {{val}}</option>
-		</select><br />
+		<div class="list-group">
+			<a href="javascript:;" class="list-group-item"
+			   data-ng-repeat="item in items" data-ng-click="edit(item, $index)">
+				<strong>{{item.name}}</strong> ({{item.type}})
 
-		<button data-ng-click="add(item)" data-ng-show="item.name && item.type">Add</button>
-	</fieldset>
+				<button type="button" class="btn btn-xs btn-danger pull-right" aria-label="Remove"
+						data-ng-click="remove($index)">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</button>
+			</a>
+		</div>
+	</div>
 
-	<br /><br /><br />
+	<div data-ng-show="title">
+		<fieldset>
+			<legend>{{title}}</legend>
 
-	<ul class="list-group">
-		<li class="list-group-item" data-ng-repeat="item in items">
-			<strong>{{item.name}}</strong> ({{item.type}})
-		</li>
-	</ul>
+			<label>Name<sup>*</sup>:</label>
+			<input type="text" ng-model="item.name" /><br />
+
+			<label>Type<sup>*</sup>:</label>
+			<select data-ng-model="item.type">
+				<option data-ng-repeat="val in [1,2,3,4,5,6,7,8]" data-ng-value="'Type '+val">Type {{val}}</option>
+			</select><br />
+
+			<label>Description:</label>
+			<input type="text" ng-model="item.description" /><br />
+
+			<button data-ng-click="reset()">Cancel</button>
+			<button data-ng-click="save(item)" data-ng-show="item.name && item.type">{{button}}</button>
+		</fieldset>
+	</div>
 
 </div>
