@@ -1,0 +1,39 @@
+.container-fluid {
+  overflow: auto;
+}
+.container-fluid > article {
+  min-height: 5000px;
+}
+header,
+footer {
+  width: 100%;
+  padding: 5px 15px;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+header h1,
+footer h1 {
+  margin: 0 10px 0 0;
+}
+body.affix {
+  position: relative;
+}
+body.affix .container-fluid {
+  z-index: 0;
+  padding-top: 52px;
+}
+body.affix header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+  border-bottom-color: #000;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
