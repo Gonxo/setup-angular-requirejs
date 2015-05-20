@@ -1,8 +1,8 @@
-define(['angular', 'angularStorage'],
+define(['angular'],
 
 function(angular) {
 	
-	return angular.module('controllers.some', ['ngStorage'])
+	return angular.module('controllers.some', [])
 		.controller('SomeCtrl', ['$scope', '$localStorage', function($scope, $localStorage) {
 
 			$scope.idx = -1;

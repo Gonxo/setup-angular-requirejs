@@ -1,9 +1,10 @@
-define(['angular', 'routes', 'angularRoute', 'controllers', 'directives', 'services'],
+define(['angular', 'routes', 'angularRoute', 'ngStorage', 'controllers', 'directives', 'services'],
 
 function(angular, routes) {
 
 	var app = angular.module('setUpApp', [
 		'ngRoute',
+		'ngStorage',
 		'app.controllers',
 		'app.directives',
 		'app.services'

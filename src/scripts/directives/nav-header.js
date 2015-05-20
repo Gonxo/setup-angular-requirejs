@@ -8,7 +8,7 @@ define(function() {
 				restrict: 'A',
 				controller: 'HeaderCtrl',
 				controllerAs: 'header',
-				templateUrl: 'partials/header.html'
+				templateUrl: 'rsc/partials/header.html'
 			};
 		}]
 	};
